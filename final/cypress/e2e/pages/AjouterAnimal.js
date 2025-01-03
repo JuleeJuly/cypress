@@ -4,6 +4,7 @@ class AjouterAnimal{
         birthDate: "#birthDate",
         typeAnimal: "select#type",
         btnSubmit: "[type='submit']",
+        erreurMessage: "span",
     }
 
     remplirName(nomDuChien){
@@ -17,6 +18,9 @@ class AjouterAnimal{
     }
     clickBtnSubmit(){
         cy.get(this.selectors.btnSubmit).click();
+    }
+    messageErreur(message){
+        cy.get(this.selectors.erreurMessage).should('have.text', message);
     }
 
 }
