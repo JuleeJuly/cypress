@@ -1,4 +1,4 @@
-class ResultatRecherche {
+class SearchResult {
     selectors = {
         table: "#ownersTable",
     };
@@ -6,12 +6,12 @@ class ResultatRecherche {
     getTable(){
         return cy.get(this.selectors.table);
     }
-    verifyLigneTable(nb){
+    verifyLineTable(nb){
         cy.get(this.selectors.table +" tbody").should('have.descendants', 'tr')
         cy.get('tr').its('length').should('be.gt', nb)
     }
-    clickPremierResultat(){
+    clickFirstResult(){
         cy.get(this.selectors.table +" a").first().click()
     }
 }
-export default ResultatRecherche;
+export default SearchResult;

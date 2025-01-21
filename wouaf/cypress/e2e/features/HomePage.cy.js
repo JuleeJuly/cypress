@@ -1,17 +1,17 @@
-import Accueil from '../page/Accueil.cy.js';
+import Home from '../page/Home.cy.js';
 
 describe("Tests de la page d'accueil",()=>{
-    const pageAccueil = new Accueil();
+    const homePage = new Home();
     beforeEach(()=>{
         cy.visit('https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/');
     });
     it('visite de la page', () => {
-        pageAccueil.visit();
+        homePage.visit();
     });
     it('Verifier message acceuil', () => {
-        pageAccueil.verifyWelcomeMessage();
+        homePage.verifyWelcomeMessage();
     });
     it("Naviguer vers la page proprietaire d'animaux",() => {
-        pageAccueil.getFindOwnersBtn().click();
+        homePage.getFindOwnersButton().click();
     });
 });
